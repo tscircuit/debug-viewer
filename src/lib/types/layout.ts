@@ -1,9 +1,7 @@
 /**
  * Generic layout format
  */
-export interface Soup {
-  elements: LayoutObject[]
-}
+export type Soup = LayoutObject[]
 
 export type LayoutObject = (
   | {
