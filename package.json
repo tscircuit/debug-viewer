@@ -1,12 +1,36 @@
 {
-  "name": "debug-renderer",
+  "name": "@tscircuit/debug-viewer",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "@storybook/addon-essentials": "^7.0.27",
+    "@storybook/addon-interactions": "^7.0.27",
+    "@storybook/addon-links": "^7.0.27",
+    "@storybook/blocks": "^7.0.27",
+    "@storybook/nextjs": "^7.0.27",
+    "@storybook/react": "^7.0.27",
+    "@storybook/testing-library": "^0.0.14-next.2",
+    "@tscircuit/react-fiber": "^1.0.2",
+    "@types/node": "20.4.2",
+    "@types/react": "18.2.15",
+    "next": "^13.4.10",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "storybook": "^7.0.27",
+    "typescript": "5.1.6"
+  },
+  "dependencies": {
+    "@sindresorhus/string-hash": "^2.0.0",
+    "nice-color-palettes": "^3.0.0",
+    "ts-toolbelt": "^9.6.0"
+  }
 }
