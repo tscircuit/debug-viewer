@@ -34,11 +34,8 @@ const getTypeInd = (type: string) => {
 }
 
 export default ({ soup }: { soup: Soup }) => {
-  const [transform, setTransform] = useState<Matrix>(defaultTransform)
-
-  const { ref } = useMouseMatrixTransform({
-    transform,
-    onSetTransform: setTransform,
+  const { ref, transform } = useMouseMatrixTransform({
+    initialTransform: defaultTransform,
   })
 
   const layout_objects = [...soup]

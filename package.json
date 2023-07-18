@@ -24,7 +24,7 @@
     "react-dom": "^18.2.0",
     "storybook": "^7.0.27",
     "typescript": "5.1.6",
-    "use-mouse-matrix-transform": "^1.0.4"
+    "use-mouse-matrix-transform": "^1.1.1"
   },
   "dependencies": {
     "@react-hook/mouse-position": "^4.1.3",
