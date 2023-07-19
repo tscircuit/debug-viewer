@@ -1,5 +1,7 @@
 # @tscircuit/debug-viewer
 
+[Examples](https://debug-viewer.vercel.app)
+
 View a debug version of a schematic or PCB.
 
 ## Usage
