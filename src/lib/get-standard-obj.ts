@@ -1,7 +1,17 @@
 import type { LayoutObject, StandardObject } from "./types"
 import colors from "nice-color-palettes"
-import stringHash from "@sindresorhus/string-hash"
 import { U } from "ts-toolbelt"
+
+function stringHash(str: string) {
+  let hash = 0
+  if (str.length == 0) return hash
+  for (var i = 0; i < str.length; i++) {
+    var char = str.charCodeAt(i)
+    hash = (hash << 5) - hash + char
+    hash = hash & hash // Convert to 32bit integer
+  }
+  return hash
+}
 
 export const getStandardObj = (
   lo: Partial<U.Merge<LayoutObject>> & LayoutObject
