@@ -1,6 +1,6 @@
 {
   "name": "@tscircuit/debug-viewer",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Debug tscircuit components and soup",
   "main": "dist/index.js",
   "scripts": {
