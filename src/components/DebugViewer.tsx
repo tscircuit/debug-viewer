@@ -25,6 +25,7 @@ export const DebugViewer = ({
   const [error, setError] = useState<string | null>(null)
 
   useEffect(() => {
+    if (!children) return
     if (initialSoup.length > 0) return
     const projectBuilder = createProjectBuilder()
     createRoot()
