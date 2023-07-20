@@ -7,7 +7,7 @@ View a debug version of a schematic or PCB.
 ## Usage
 
 ```tsx
-import [ DebugViewer } from "@tscircuit/debug-viewer"
+import { DebugViewer } from "@tscircuit/debug-viewer"
 
 export const SchematicDebugView = () => (
   <DebugViewer schematic>
