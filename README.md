@@ -4,6 +4,8 @@
 
 View a debug version of a schematic or PCB.
 
+![](https://user-images.githubusercontent.com/1910070/255350180-fa4d1988-e247-4eca-814c-2d062216295a.png)
+
 ## Usage
 
 ```tsx
