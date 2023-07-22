@@ -2,6 +2,7 @@
   "name": "@tscircuit/debug-viewer",
   "version": "1.0.3",
   "description": "Debug tscircuit components and soup",
+  "repository": "https://github.com/tscircuit/debug-viewer",
   "main": "dist/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
