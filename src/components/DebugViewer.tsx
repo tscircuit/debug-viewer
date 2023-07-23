@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { createProjectBuilder } from "@tscircuit/builder"
+import { type AnyElement, createProjectBuilder } from "@tscircuit/builder"
 import { createRoot } from "@tscircuit/react-fiber"
 import DebugLayout from "./DebugLayout"
 
@@ -24,6 +24,11 @@ export const DebugViewer = ({
   const [soup, setSoup] = useState<any>(initialSoup ?? [])
   const [error, setError] = useState<string | null>(null)
 
+  const allowed_prefixes = [
+    schematic ? "schematic_" : null,
+    pcb ? "pcb_" : null,
+  ].filter(Boolean) as string[]
+
   useEffect(() => {
     if (!children) return
     if (initialSoup.length > 0) return
@@ -31,16 +36,8 @@ export const DebugViewer = ({
     createRoot()
       .render(children, projectBuilder as any)
       .then(async (soup) => {
-        const allowed_prefixes = [
-          schematic ? "schematic_" : null,
-          pcb ? "pcb_" : null,
-        ].filter(Boolean) as string[]
         setError(null)
-        setSoup(
-          soup.filter((elm) =>
-            allowed_prefixes.some((ap) => elm.type.startsWith(ap))
-          )
-        )
+        setSoup(soup)
       })
       .catch((e) => {
         console.error("ERROR RENDERING CIRCUIT")
@@ -65,5 +62,11 @@ export const DebugViewer = ({
 
   if (soup.length === 0) return "loading..."
 
-  return <DebugLayout soup={soup} />
+  return (
+    <DebugLayout
+      soup={soup.filter((elm: AnyElement) =>
+        allowed_prefixes.some((ap) => elm.type.startsWith(ap))
+      )}
+    />
+  )
 }
