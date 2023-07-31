@@ -27,6 +27,7 @@ export const DebugViewer = ({
   const allowed_prefixes = [
     schematic ? "schematic_" : null,
     pcb ? "pcb_" : null,
+    "source_",
   ].filter(Boolean) as string[]
 
   useEffect(() => {
@@ -65,7 +66,7 @@ export const DebugViewer = ({
   return (
     <DebugLayout
       soup={soup.filter((elm: AnyElement) =>
-        allowed_prefixes.some((ap) => elm.type.startsWith(ap))
+        allowed_prefixes.some((ap) => elm.type.startsWith(ap)),
       )}
     />
   )
