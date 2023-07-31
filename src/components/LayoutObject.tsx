@@ -4,9 +4,11 @@ import colorAlpha from "color-alpha"
 
 export default ({
   obj,
+  source,
   onClick,
 }: {
   obj: StandardObject
+  source: any
   onClick?: Function
 }) => {
   const [hovering, setHovering] = useState(false)
@@ -49,6 +51,7 @@ export default ({
         }}
       >
         <pre>{JSON.stringify(obj.content, null, 2)}</pre>
+        {source && <pre>{JSON.stringify(source, null, 2)}</pre>}
       </div>
     </>
   )

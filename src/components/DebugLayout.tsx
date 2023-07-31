@@ -13,12 +13,13 @@ import {
 } from "transformation-matrix"
 import LayoutObject from "./LayoutObject"
 import { MouseIndicator } from "./MouseIndicator"
+import { getSourceObj } from "lib/get-source-obj"
 
 const defaultTransform = compose(
   identity(),
   // flipY(),
   translate(400, 300),
-  scale(40, 40)
+  scale(40, 40),
 )
 
 /**
@@ -71,7 +72,11 @@ export default ({ soup }: { soup: Soup }) => {
           .filter(Boolean)
           .map((obj) => applyTransform(obj as any, transform))
           .map((obj, i) => (
-            <LayoutObject obj={obj} key={(obj as any).key} />
+            <LayoutObject
+              obj={obj}
+              key={(obj as any).key}
+              source={getSourceObj(obj.content, soup)}
+            />
           ))}
         <MouseIndicator containerRef={ref} transform={transform} />
       </div>
